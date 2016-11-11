@@ -1,6 +1,6 @@
 {
-  "name": "elibyy/tcpdf-laravel",
-  "description": "tcpdf support for laravel 5",
+  "name": "beverio/tcpdf-laravel",
+  "description": "Better tcpdf support for laravel 5",
   "minimum-stability": "stable",
   "license": "MIT",
   "keywords": [
@@ -10,8 +10,7 @@
   ],
   "authors": [
 	{
-	  "name": "eli y",
-	  "email": "elibyy@gmail.com"
+	  "name": "bever.io",
 	}
   ],
   "require": {

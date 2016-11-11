@@ -7,7 +7,7 @@ use Config;
 class TCPDF
 {
 	protected static $format;
-	
+
 	protected $app;
 	/** @var  TCPDFHelper */
 	protected $tcpdf;
@@ -32,6 +32,35 @@ class TCPDF
 	public static function changeFormat($format)
 	{
 		static::$format = $format;
+	}
+
+	public function Show()
+	{
+		echo $this->tcpdf->Output(null, 'S');
+	}
+
+	public static function inline($view, $data, $fileName = '')
+	{
+		if($fileName == '') {
+			$fileName = $view.'.pdf';
+		}
+
+		return response()->make(view($view, $data)->render(), 200, [
+		    'Content-Type' => 'application/pdf',
+		    'Content-Disposition' => 'inline; filename="'.$fileName
+		]);
+	}
+
+	public static function save($view, $data, $fileName = '')
+	{
+		if($fileName == '') {
+			$fileName = $view.'.pdf';
+		}
+
+		return response()->make(view($view, $data)->render(), 200, [
+		    'Content-Type' => 'application/pdf',
+		    'Content-Disposition' => 'attachment; filename="'.$fileName
+		]);
 	}
 
 	public function __call($method, $args)
