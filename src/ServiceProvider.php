@@ -1,16 +1,15 @@
 <?php
-
-namespace Elibyy\TCPDF;
-
+namespace lighth7015\Tcpdf;
 use Config;
-use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+
+use Illuminate\Support\ServiceProvider as Provider;
 
 /**
  * Class ServiceProvider
  * @version 1.0
- * @package Elibyy\TCPDF
+ * @package lighth7015\Tcpdf
  */
-class ServiceProvider extends LaravelServiceProvider
+class ServiceProvider extends Provider
 {
 	protected $constantsMap = [
 		'K_PATH_MAIN'                   => 'path_main',
