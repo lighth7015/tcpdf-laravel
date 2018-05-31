@@ -1,12 +1,12 @@
 # Laravel 5.3 TCPDF
 
-Forked from: [elibyy/tcpdf-laravel](https://github.com/elibyy/tcpdf-laravel)
+Forked from: [verwer/tcpdf-laravel](https://github.com/verwer/tcpdf-laravel)
 
 ## Installation
 
 ### Step 1
 Require package using
-```composer require beverio/tcpdf-laravel```
+```composer require lighth7015/tcpdf-laravel```
 
 ### Step 2
 Add the service provider and aliases to `config/app.php`.
