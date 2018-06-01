@@ -1,25 +1,39 @@
 {
-  "name": "lighth7015/tcpdf-laravel",
-  "description": "Better tcpdf support for laravel 5",
-  "minimum-stability": "stable",
-  "license": "MIT",
-  "keywords": [
-	"laravel",
-	"tcpdf",
-	"pdf"
-  ],
-  "authors": [
-	{
-	  "name": "bever.io"
+	"name": "lighth7015/tcpdf-laravel",
+	"description": "Better tcpdf support for laravel 5",
+	"minimum-stability": "stable",
+	"license": "MIT",
+	"keywords": [
+		"laravel",
+		"tcpdf",
+		"pdf"
+	],
+	"authors": [
+		{
+			"name": "bever.io"
+		},
+		{
+			"name": "Robert Butler	<me@r-butler.net>",
+			"email": "me@r-butler.net",
+		},
+	],
+	"require": {
+		"illuminate/support": ">= 5.3",
+		"tecnickcom/tcpdf": "6.2.12"
+	},
+	"autoload": {
+		"psr-4": {
+			"lighth7015\\Tcpdf\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": ]
+				"lighth7015\\Tcpdf\\Providers\TcpdfService",
+			],
+			"aliases": [
+				"lighth7015\\Tcpdf\\Facades\Tcpdf",
+			],
+		}
 	}
-  ],
-  "require": {
-	"illuminate/support": ">= 5.3",
-	"tecnickcom/tcpdf": "6.2.12"
-  },
-  "autoload": {
-	"psr-4": {
-	  "Elibyy\\TCPDF\\": "src/"
-	}
-  }
 }

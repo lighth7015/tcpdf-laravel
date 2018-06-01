@@ -13,7 +13,7 @@ Add the service provider and aliases to `config/app.php`.
 ```php
 'providers' => [
     //...
-    Elibyy\TCPDF\ServiceProvider::class,
+    lighth7015\Tcpdf\Providers\ServiceProvider::class,
 ]
 
 //...

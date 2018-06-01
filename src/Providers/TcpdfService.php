@@ -1,15 +1,26 @@
 <?php
-namespace lighth7015\Tcpdf;
-use Config;
+namespace lighth7015\Tcpdf\Providers;
 
-use Illuminate\Support\ServiceProvider as Provider;
+use Illuminate\Support\ServiceProvider as Service,
+	Config;
+
+function path_name($filename, string $directory = '') {
+	
+	switch (strlen($directory)) {
+	case 0:
+		return sprintf('%s/%s', dirname(dirname( __FILE__ )), $filename);
+	
+	default:
+		return sprintf('%s/%s/%s', dirname(dirname( __FILE__ )), $directory, $filename);
+	}
+}
 
 /**
  * Class ServiceProvider
  * @version 1.0
  * @package lighth7015\Tcpdf
  */
-class ServiceProvider extends Provider
+class Tcpdf extends Service
 {
 	protected $constantsMap = [
 		'K_PATH_MAIN'                   => 'path_main',
@@ -56,11 +67,13 @@ class ServiceProvider extends Provider
 	 */
 	public function register()
 	{
-		$configPath = dirname(__FILE__) . '/../config/tcpdf.php';
-		$this->mergeConfigFrom($configPath, 'tcpdf');
-		$this->app->singleton('tcpdf', function ($app) {
-			return new TCPDF($app);
-		});
+		$app = $this->app;
+		
+		$this->mergeConfigFrom( 
+			config_path('tcpdf.php'), 
+			'tcpdf');
+		
+		$app->singleton('Tcpdf', Tcpdf::class);
 	}
 
 	public function boot()
@@ -77,8 +90,11 @@ class ServiceProvider extends Provider
 				define($key, $value);
 			}
 		}
-		$configPath = dirname(__FILE__) . '/../config/tcpdf.php';
-		$this->publishes(array($configPath => config_path('tcpdf.php')), 'config');
+		
+		$configPath = dirname(dirname(__FILE__)) . '/config/tcpdf.php';
+		$this->publishes([
+			$configPath => config_path('tcpdf.php')
+		], 'config');
 	}
 
 	public function provides()
