@@ -30,9 +30,6 @@
 			"providers": [
 				"lighth7015\\Tcpdf\\Providers\\Tcpdf"
 			],
-			"aliases": [
-				"lighth7015\\Tcpdf\\Facades\\TcpdfService"
-			]
 		}
 	}
 }
