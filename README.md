@@ -4,25 +4,8 @@ Forked from: [verwer/tcpdf-laravel](https://github.com/verwer/tcpdf-laravel)
 
 ## Installation
 
-### Step 1
 Require package using
 ```composer require lighth7015/tcpdf-laravel```
-
-### Step 2
-Add the service provider and aliases to `config/app.php`.
-```php
-'providers' => [
-    //...
-    lighth7015\Tcpdf\Providers\ServiceProvider::class,
-]
-
-//...
-
-'aliases' => [
-    //...
-    'PDF' => Elibyy\TCPDF\Facades\TCPDF::class
-]
-```
 
 ## Usage
 Create a view in `resources/views/`. You can use all TCPDF methods with the `PDF` facade.
