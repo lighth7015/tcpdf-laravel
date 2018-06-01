@@ -24,5 +24,12 @@
 		"psr-4": {
 			"lighth7015\\Tcpdf\\": "src/"
 		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"lighth7015\\Tcpdf\\Providers\\Tcpdf"
+			],
+		}
 	}
 }
