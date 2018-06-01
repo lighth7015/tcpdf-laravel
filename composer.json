@@ -28,10 +28,10 @@
 	"extra": {
 		"laravel": {
 			"providers": [
-				"lighth7015\\Tcpdf\\Facades\\Tcpdf"
+				"lighth7015\\Tcpdf\\Providers\\Tcpdf"
 			],
 			"aliases": [
-				"lighth7015\\Tcpdf\\Providers\\TcpdfService"
+				"lighth7015\\Tcpdf\\Facades\\TcpdfService"
 			]
 		}
 	}
