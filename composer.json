@@ -8,14 +8,13 @@
 		"tcpdf",
 		"pdf"
 	],
-	"authors": [
-		{
+	"authors": [{
 			"name": "bever.io"
 		},
 		{
-			"name": "Robert Butler	<me@r-butler.net>",
+			"name": "Robert Butler  <me@r-butler.net>",
 			"email": "me@r-butler.net"
-		},
+		}
 	],
 	"require": {
 		"illuminate/support": ">= 5.3",
@@ -28,12 +27,12 @@
 	},
 	"extra": {
 		"laravel": {
-			"providers": ]
-				"lighth7015\\Tcpdf\\Providers\TcpdfService",
+			"providers": [
+				"lighth7015\\Tcpdf\\Facades\\Tcpdf"
 			],
 			"aliases": [
-				"lighth7015\\Tcpdf\\Facades\Tcpdf",
-			],
+				"lighth7015\\Tcpdf\\Providers\\TcpdfService"
+			]
 		}
 	}
 }
